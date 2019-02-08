@@ -7,7 +7,7 @@ class MyComp extends Component {
     constructor(props) {
         super(props)
         this.state = { result: MyComp.multiplication(1),hello:props.hier }
-        debugger
+        //debugger
     }
     componentDidMount() {
         this.setState({ result: MyComp.multiplication(1) })
