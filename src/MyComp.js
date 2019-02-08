@@ -6,14 +6,16 @@ class MyComp extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { result: 0 }
+        this.state = { result: MyComp.multiplication(1),hello:props.hier }
+        debugger
     }
     componentDidMount() {
         this.setState({ result: MyComp.multiplication(1) })
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (prevState.result===0) return null
+        debugger
+        if (prevState.hello===nextProps.hier) return null
 
         return {
           result: MyComp.multiplication(2),
