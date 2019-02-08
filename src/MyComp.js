@@ -13,6 +13,8 @@ class MyComp extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.result===0) return null
+
         return {
           result: MyComp.multiplication(2),
         };
