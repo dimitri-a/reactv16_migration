@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyComp from './MyComp';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { change: false }
+    debugger
+  }
+
+  onChange() {
+    debugger
+    this.setState({ change: !this.state.change })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button onClick={() =>this.onChange()}>Change</button>
+        <MyComp hier={this.state.change}></MyComp>
       </div>
     );
   }
