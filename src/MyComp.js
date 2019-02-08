@@ -8,15 +8,17 @@ class MyComp extends Component {
         super(props)
         this.state = { result: 0 }
     }
-    componentWillMount() {
-        this.setState({ result: this.multiplication(1) })
-    }
-    componentWillReceiveProps() {
-        debugger
-        this.setState({ result: this.multiplication(2) })
+    componentDidMount() {
+        this.setState({ result: MyComp.multiplication(1) })
     }
 
-    multiplication = (x) => {
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+          result: MyComp.multiplication(2),
+        };
+      }
+
+    static multiplication = (x) => {
         return x * 2
     }
 
