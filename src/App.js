@@ -8,11 +8,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = { change: false }
-    debugger
   }
 
   onChange() {
-    debugger
     this.setState({ change: !this.state.change })
   }
 

@@ -12,7 +12,6 @@ class MyComp extends Component {
         this.setState({ result: this.multiplication(1) })
     }
     componentWillReceiveProps() {
-        debugger
         this.setState({ result: this.multiplication(2) })
     }
 
